@@ -7,7 +7,7 @@
   }
   , "dependencies": {
       "express": "2.5.x"
-    , "jade": ">= 0.0.x"
+    , "ejs": ">=0.7.2"
   }
   , "devDependencies": {
       "mocha": ">=1.0.3"
