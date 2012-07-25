@@ -1,6 +1,14 @@
 @import "../vendor/bootstrap/css/bootstrap.css";
 
+body {
+  padding-top: 60px;
+}
 
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}
 
 /** Boostrap-Responsive always at bottom **/
 @import "../vendor/bootstrap/css/bootstrap-responsive.css";

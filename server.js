@@ -23,7 +23,7 @@ app.configure('production', function(){
 });
 
 app.get('/', require('./routes/index'));
-app.get('/render.:format', require('./routes/render'));
+app.get('/endpoints', require('./routes/endpoints'));
 
 app.listen(PORT, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
