@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+![Boilerplate](https://github.com/tbranyen/backbone-boilerplate/raw/assets/header.png)
+
+>>>>>>> bbb
 Backbone Boilerplate
 ====================
 
@@ -17,6 +22,12 @@ Special Thanks to: [cowboy](http://github.com/cowboy),
 [wookiehangover](http://github.com/wookiehangover), and
 [jugglinmike](http://github.com/jugglinmike) for helping me create this project.
 
+<<<<<<< HEAD
+=======
+Extra Special Thanks to: [Paul Guinan](http://bigredhair.com/work/paul.html)
+for giving me usage rights to his fantastic Boilerplate character.
+
+>>>>>>> bbb
 ## Documentation ##
 
 View the Backbone Boilerplate documentation here:

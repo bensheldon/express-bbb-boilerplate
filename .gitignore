@@ -5,3 +5,9 @@ profile
 # node
 node_modules
 .env
+
+# bbb
+dist/
+npm-debug.log
+.lock-wscript
+build/node_modules/grunt/node_modules/glob/build

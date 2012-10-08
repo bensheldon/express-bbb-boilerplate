@@ -41,16 +41,45 @@ module.exports = function(grunt) {
       ]
     },
 
+<<<<<<< HEAD
+=======
+    // The handlebars task compiles all application templates into JavaScript
+    // functions using Handlebars templating engine.
+    //
+    // Since this task defaults to writing to the same file as the jst task,
+    // edit the debug task replacing jst with handlebars.
+    //
+    // The concat task depends on this file to exist, so if you decide to
+    // remove this, ensure concat is updated accordingly.
+    handlebars: {
+      "dist/debug/templates.js": ["app/templates/**/*.html"]
+    },
+
+>>>>>>> bbb
     // The concatenate task is used here to merge the almond require/define
     // shim and the templates into the application code.  It's named
     // dist/debug/require.js, because we want to only load one script file in
     // index.html.
     concat: {
+<<<<<<< HEAD
       "dist/debug/require.js": [
         "assets/js/libs/almond.js",
         "dist/debug/templates.js",
         "dist/debug/require.js"
       ]
+=======
+      dist: {
+        src: [
+          "assets/js/libs/almond.js",
+          "dist/debug/templates.js",
+          "dist/debug/require.js"
+        ],
+
+        dest: "dist/debug/require.js",
+
+        separator: ";"
+      }
+>>>>>>> bbb
     },
 
     // This task uses the MinCSS Node.js project to take all your CSS files in
@@ -59,10 +88,36 @@ module.exports = function(grunt) {
     // only want to load one stylesheet in index.html.
     mincss: {
       "dist/release/index.css": [
+<<<<<<< HEAD
         "assets/css/h5bp.css"
       ]
     },
 
+=======
+        "dist/debug/index.css"
+      ]
+    },
+
+    // This task simplifies working with CSS inside Backbone Boilerplate
+    // projects.  Instead of manually specifying your stylesheets inside the
+    // configuration, you can use `@imports` and this task will concatenate
+    // only those paths.
+    styles: {
+      // Out the concatenated contents of the following styles into the below
+      // development file path.
+      "dist/debug/index.css": {
+        // Point this to where your `index.css` file is location.
+        src: "assets/css/index.css",
+
+        // The relative path to use for the @imports.
+        paths: ["assets/css"],
+
+        // Additional production-only stylesheets here.
+        additional: []
+      }
+    },
+
+>>>>>>> bbb
     // Takes the built require.js file and minifies it for filesize benefits.
     min: {
       "dist/release/require.js": [
@@ -96,7 +151,12 @@ module.exports = function(grunt) {
         // Map `server:debug` to `debug` folders.
         folders: {
           "app": "dist/debug",
+<<<<<<< HEAD
           "assets/js/libs": "dist/debug"
+=======
+          "assets/js/libs": "dist/debug",
+          "assets/css": "dist/debug"
+>>>>>>> bbb
         }
       },
 
@@ -142,15 +202,32 @@ module.exports = function(grunt) {
     // point the configuration to your test directory.
     jasmine: {
       all: ["test/jasmine/*.html"]
+<<<<<<< HEAD
+=======
+    },
+
+    // The watch task can be used to monitor the filesystem and execute
+    // specific tasks when files are modified.  By default, the watch task is
+    // available to compile CSS if you are unable to use the runtime compiler
+    // (use if you have a custom server, PhoneGap, Adobe Air, etc.)
+    watch: {
+      files: ["grunt.js", "assets/**/*", "app/**/*"],
+      tasks: "styles"
+>>>>>>> bbb
     }
 
   });
 
+<<<<<<< HEAD
   // The default task will remove all contents inside the dist/ folder, lint
+=======
+  // The debug task will remove all contents inside the dist/ folder, lint
+>>>>>>> bbb
   // all your code, precompile all the underscore templates into
   // dist/debug/templates.js, compile all the application code into
   // dist/debug/require.js, and then concatenate the require/define shim
   // almond.js and dist/debug/templates.js into the require.js file.
+<<<<<<< HEAD
   grunt.registerTask("default", "clean lint jst requirejs concat");
 
   // The debug task is simply an alias to default to remain consistent with
@@ -160,5 +237,12 @@ module.exports = function(grunt) {
   // The release task will run the debug tasks and then minify the
   // dist/debug/require.js file and CSS files.
   grunt.registerTask("release", "default min mincss");
+=======
+  grunt.registerTask("debug", "clean lint jst requirejs concat styles");
+
+  // The release task will run the debug tasks and then minify the
+  // dist/debug/require.js file and CSS files.
+  grunt.registerTask("release", "debug min mincss");
+>>>>>>> bbb
 
 };
