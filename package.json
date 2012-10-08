@@ -1,17 +1,22 @@
 {
-    "name": "boilerplate"
-  , "version": "0.0.1"
-  , "private": true
-  , "engines": {
-      "node": "0.6.x"
-  }
-  , "dependencies": {
-      "express": "2.5.x"
-    , "ejs": ">=0.7.2"
-  }
-  , "devDependencies": {
-      "mocha": ">=1.0.3"
-    , "should": ">=0.6.3"
-    , "sinon": ">=1.3.4"
+  "name": "express-bbb-boilerplate",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "0.6.x"
+  },
+  "scripts": {
+    "install": "bbb release --config public/grunt.js --force"
+  },
+  "dependencies": {
+    "bbb": "~0.1.12",
+    "express": "2.x",
+    "lodash": "0.7.x",
+    "async": "0.1.x"
+  },
+  "devDependencies": {
+    "mocha": "1.6.x",
+    "chai": "1.3.x",
+    "sinon": "1.4.x"
   }
 }
